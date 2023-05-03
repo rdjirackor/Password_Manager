@@ -1,5 +1,5 @@
-import password_generator
 from cryptography.fernet import Fernet
+
 
 password_dict = {"password": "password", "account_for": "account_name", "name_of_user_in_particular": "name", "time": "timestamp"}
 
