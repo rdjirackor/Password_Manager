@@ -1,3 +1,5 @@
+# create_account.py
+
 def create_user():
     user_name = input("What is your Name? :")
     user_email = input("What is your email address?, this will\nbe used in case you forget your password :")
@@ -19,6 +21,9 @@ def confirm_password(password):
     #print(f"Your accepted password is {confirmed_one}")
 
 
-user = create_user()
-initially_given_password = user["Central_pass"]
-confirm_password(initially_given_password)
+if __name__ == "__main__":
+    user = create_user()
+    initially_given_password = user["Central_pass"]
+    confirm_password(initially_given_password)
+
+    print("create_account.py finished executing")
