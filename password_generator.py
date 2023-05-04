@@ -26,9 +26,14 @@ def password_generator(account_name,email):
   return {"Password":a_random_string,"Account":account_name,"Email":email}
 #The piece oof code directly, above is the returned normal password to be hashed below
 password=password_generator("G-mail","None")
+
+with open("passwords.txt", "a") as file:
+    file.write(str(password))
+
 #print(password["Password"])
 #Below is the hashing process, this will be imported in the sqlite.py file, which is the database management stuff.
 hashed_password=hashlib.sha256(password["Password"].encode()).hexdigest()
+print(hashed_password)
 
 
 
