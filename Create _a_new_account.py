@@ -1,6 +1,8 @@
 from tkinter import *
 import sqlite3 as sql
 import re
+import Add_a_new_password
+import os
 
 root = Tk()
 root.geometry("1000x788")
@@ -64,10 +66,16 @@ def create_account():
 
     # Display success message
     output["text"] = "Account created successfully!"
+    
 
 create_button = Button(root, text="Create Account", command=create_account)
 create_button.pack()
 
+def open_file():
+    root.destroy()
+    os.startfile('Add_a_new_password.py')
+
+button =Button(root, text="Add a password", command=open_file)
+button.pack()
+
 root.mainloop()
-
-
