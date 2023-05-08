@@ -29,8 +29,8 @@ with open("passwords.txt", "a") as file:
 
 #print(password["Password"])
 #Below is the hashing process, this will be imported in the sqlite.py file, which is the database management stuff.
-hashed_password=hashlib.sha256(password_generator().encode()).hexdigest()
-print(hashed_password)
+#hashed_password=hashlib.sha256(password_generator().encode()).hexdigest()
+
 
 
 
@@ -71,7 +71,7 @@ def create_new_entry():
     cursor.execute("CREATE TABLE IF NOT EXISTS GOLDEN (Password TEXT, Account TEXT,EMAIL TEXT)")
 
 
-    cursor.execute("INSERT INTO GOLDEN VALUES (?, ?, ?)", (hashed_password, account,email))
+    cursor.execute("INSERT INTO GOLDEN VALUES (?, ?, ?)", (password_generator(), account,email))
 
     cursor.execute("SELECT * FROM GOLDEN")
     rows = cursor.fetchall()

@@ -1,8 +1,8 @@
 from tkinter import *
 import sqlite3 as sql
 import re
-import Add_a_new_password
-import os
+#import Add_a_new_password
+import subprocess
 
 root = Tk()
 root.geometry("1000x788")
@@ -31,6 +31,8 @@ confirm_password_entry.pack()
 # Create Label widget to display output
 output = Label(root, text="")
 output.pack()
+def open_file2():
+   subprocess.Popen(["python", "login.py"])
 
 def create_account():
     # Get user inputs from Entry widgets
@@ -67,15 +69,19 @@ def create_account():
     # Display success message
     output["text"] = "Account created successfully!"
     
-
+    
 create_button = Button(root, text="Create Account", command=create_account)
 create_button.pack()
-
-def open_file():
-    root.destroy()
-    os.startfile('Add_a_new_password.py')
-
-button =Button(root, text="Add a password", command=open_file)
+button =Button(root, text="Login", command=open_file2)
 button.pack()
+
+
+
+
+
+
+
+
+
 
 root.mainloop()
